@@ -27,7 +27,6 @@ class ShortlinksController < ApplicationController
     end
   end
 
-
   private
 
   def shortlink_params
