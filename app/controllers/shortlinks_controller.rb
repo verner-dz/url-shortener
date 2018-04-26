@@ -18,19 +18,12 @@ class ShortlinksController < ApplicationController
     end
 
     respond_to do |format|
-
       if @link.save
-
         url = request.base_url + "/" + @link.slug
         format.js { render :create, locals: { url: url, new_link: Shortlink.new } }
-
       else
-        debugger
-
-        format.js { render :error, locals: {message: @link.errors.full_messages} }
+        format.js { render :errors, locals: { link: @link }}
       end
-
-
     end
   end
 

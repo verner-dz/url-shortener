@@ -2,10 +2,11 @@
   #url-shortener-section.jumbotron
     .col-md-12
       = simple_form_for link, html: { class: "form-horizontal" }, remote: true do |f|
+
         - if link.errors.present?
-          .alert.alert-danger{role: "alert"}
+          .alert.alert-danger{ role: "alert" }
             %span.sr-only Error:
-          = link.errors.full_messages
+            = link.errors.full_messages.first
 
         .input-group
           = f.input_field :destination, as: :string, label: false, class: "form-control", placeholder: "Enter URL"
