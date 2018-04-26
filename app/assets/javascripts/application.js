@@ -15,5 +15,6 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+//= require shared/clipboard.min.js
 //= require landing
 //= require_tree .

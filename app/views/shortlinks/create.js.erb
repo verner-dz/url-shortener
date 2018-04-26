@@ -1,0 +1,20 @@
+$("#url-shortener-section").remove();
+$("#url-shortener-form").append("<%= escape_javascript render("create", url: url) %>");
+
+
+var clipboard = new Clipboard("#copy-btn");
+
+clipboard.on("success", function() {
+  $("<div class='url-copied'> <%= url %> </div>").insertBefore("#copy-btn").animate({
+    opacity: 0,
+    top: "-175"
+  }, 1500, function() {
+    $(this).remove();
+  });
+});
+
+$(".close-shortened-url").on("click", function() {
+  $("#success-shortened-view").remove();
+
+  $("#url-shortener-form").append("<%= escape_javascript render("form", link: new_link) %>");
+});

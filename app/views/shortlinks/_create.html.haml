@@ -1,0 +1,9 @@
+#success-shortened-view
+  .float-right.close-shortened-url.mr-4.mt-3 X
+  .jumbotron.alert-success
+    %p.text-center Your url is shortened!
+    .col-md-12
+      .input-group
+        %input#shortened-url.form-control.border.border-success{type: "text", value: url}
+        #copy-btn.btn.btn-primary.ml-2{ data: {toggle: "tooltip", "clipboard-target" => "#shortened-url"}} Copy
+
