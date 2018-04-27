@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 
   resources :shortlinks, only: :create
 
-  get "/:slug" => "shortlinks#find_and_redirect"
+  get "/:slug" => "shortlinks#find_and_redirect", as: "find_and_redirect"
 end

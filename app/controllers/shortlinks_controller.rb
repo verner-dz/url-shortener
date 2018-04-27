@@ -1,6 +1,4 @@
 class ShortlinksController < ApplicationController
-  include UrlCodec
-
   def new
     @link = Shortlink.new
   end
