@@ -1,12 +1,11 @@
 module UrlCodec
 
   CHARACTERS = [*"a".."z"] + [*"A".."Z"] + [*"0".."9"]
+  INCREMENT_VALUE = 1_000_000_000_000
 
   def self.encode(i)
-    i += 1_000_000_000_000
-
+    i += INCREMENT_VALUE
     slug = ""
-
     base = CHARACTERS.length
 
     while i > 0

@@ -10,7 +10,7 @@ class ShortlinksController < ApplicationController
     shortlink = Shortlink.find_by_destination(params[:shortlink][:destination])
 
     if shortlink.nil?
-      slug = UrlCodec.encode(last_id+1)
+      slug = UrlCodec.encode(last_id + 1)
       @link = Shortlink.new(shortlink_params)
       @link.slug = slug
     else
