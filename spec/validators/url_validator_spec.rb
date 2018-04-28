@@ -18,31 +18,31 @@ describe UrlValidator, type: :model do
     it "is invalid if url has spaces" do
       subject.destination = "http://www example.com"
       subject.valid?
-      expect(subject.errors[:destination]).to match_array("is not an url")
+      expect(subject.errors[:destination]).to match_array("is not a valid url")
     end
 
     it "is invalid if it's a string" do
       subject.destination = "blahblahblah"
       subject.valid?
-      expect(subject.errors[:destination]).to match_array("is not an url")
+      expect(subject.errors[:destination]).to match_array("is not a valid url")
     end
 
     it "is invalid if url does not have http" do
       subject.destination = "www.example.com"
       subject.valid?
-      expect(subject.errors[:destination]).to match_array("is not an url")
+      expect(subject.errors[:destination]).to match_array("is not a valid url")
     end
 
     it "is invalid if url has invalid syntax" do
       subject.destination = "http://www,example.com"
       subject.valid?
-      expect(subject.errors[:destination]).to match_array("is not an url")
+      expect(subject.errors[:destination]).to match_array("is not a valid url")
     end
 
     it "is invalid if url is incomplete" do
       subject.destination = "http://example"
       subject.valid?
-      expect(subject.errors[:destination]).to match_array("is not an url")
+      expect(subject.errors[:destination]).to match_array("is not a valid url")
     end
   end
 
