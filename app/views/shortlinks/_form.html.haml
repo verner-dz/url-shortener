@@ -4,11 +4,14 @@
       = simple_form_for link, html: { class: "form-horizontal" }, remote: true do |f|
 
         - if link.errors.present?
-          .alert.alert-danger{ role: "alert" }
-            %span.sr-only Error:
+          .alert.alert-danger.alert-dismissible{ role: "alert" }
             = link.errors.full_messages.first
+            %button.close{"data-dismiss" => "alert"}
+              %span{"aria-hidden" => "true"} &times;
 
         .input-group
           = f.input_field :destination, as: :string, label: false, class: "form-control", placeholder: "Enter URL Destination"
-
           = f.submit "Shorten", class: "btn btn-primary ml-2"
+
+        %small.text-muted Please type your url destination with either http:// or https://
+
