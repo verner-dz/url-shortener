@@ -40,9 +40,7 @@ describe ShortlinksController do
   end
 
   describe "GET find_and_redirect", type: :request do
-
     context "finds and redirects to destination" do
-
       before(:each) do
         get find_and_redirect_path(shortlink.slug)
       end
@@ -56,8 +54,8 @@ describe ShortlinksController do
       end
     end
 
-    context "renders an error template" do
-      it "renders a 404 if it cannot find the destination" do
+    context "renders a 404" do
+      it "returns a 404 status" do
         get find_and_redirect_path(FFaker::AddressUK.postcode.gsub(/\s+/, ""))
         expect(response).to have_http_status(:not_found)
       end
