@@ -1,7 +1,19 @@
 class Shortlink < ActiveRecord::Base
   validates :destination, presence: true, url: true
 
-  def generate_slug(last_id)
-    return UrlCodec.encode(last_id + 1)
+  CHARACTERS = [[*"a".."z"] + [*"A".."Z"] + [*"0".."9"]].flatten.freeze
+  URL_ENCODING_INCREMENT_VALUE = 1_000_000_000_000
+
+  def generate_slug(i)
+    i += URL_ENCODING_INCREMENT_VALUE + 1
+    slug = ""
+    base = CHARACTERS.length
+
+    while i > 0
+      slug << CHARACTERS[i.modulo(base)]
+      i /= base
+    end
+    return slug.reverse
   end
+
 end
