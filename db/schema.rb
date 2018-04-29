@@ -17,6 +17,8 @@ ActiveRecord::Schema.define(version: 20180424203759) do
     t.text "destination"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["destination"], name: "index_shortlinks_on_destination"
+    t.index ["slug"], name: "index_shortlinks_on_slug"
   end
 
 end

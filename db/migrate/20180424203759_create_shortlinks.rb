@@ -6,5 +6,7 @@ class CreateShortlinks < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
+    add_index :shortlinks, :slug
+    add_index :shortlinks, :destination
   end
 end
