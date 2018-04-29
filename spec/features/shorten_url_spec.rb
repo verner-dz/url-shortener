@@ -9,7 +9,6 @@ feature 'visitor enters url to shorten' do
   end
 
   context 'with invalid url' do
-
     it "shows a validation message if url is invalid", js: true do
       shorten("www.example.com")
       expect(page).to have_css('.alert', text: 'Destination is not a valid url')
