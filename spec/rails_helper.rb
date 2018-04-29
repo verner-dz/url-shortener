@@ -4,6 +4,8 @@ ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
+require "capybara/rspec"
+require 'capybara/poltergeist'
 require 'rspec/rails'
 require 'factory_bot'
 require 'shoulda/matchers'
@@ -83,3 +85,5 @@ Shoulda::Matchers.configure do |config|
     with.library :rails
   end
 end
+
+Capybara.javascript_driver = :poltergeist
