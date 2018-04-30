@@ -2,9 +2,9 @@ require 'rails_helper'
 
 describe Shortlink do
 
-  let!(:shortlink) { FactoryBot.create(:shortlink)}
-  let(:new_shortlink) { Shortlink.new()}
-  let(:last_id) { Shortlink.last.id}
+  let!(:shortlink) { FactoryBot.create(:shortlink) }
+  let(:new_shortlink) { Shortlink.new() }
+  let(:last_id) { Shortlink.last.id }
 
   describe "Validations" do
     it "validates presence of destination" do
