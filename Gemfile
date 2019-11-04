@@ -25,7 +25,7 @@ gem 'bootstrap', '~> 4.1.0'
 gem 'sprockets-rails', '~> 3.0', '>= 3.0.4'
 
 gem 'jquery-rails'
-gem 'simple_form', '~> 3.5'
+gem 'simple_form', '~> 5.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
