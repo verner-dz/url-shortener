@@ -21,7 +21,7 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'haml', '~> 5.0', '>= 5.0.4'
 
-gem 'bootstrap', '~> 4.1.0'
+gem 'bootstrap', '~> 4.3.1'
 gem 'sprockets-rails', '~> 3.0', '>= 3.0.4'
 
 gem 'jquery-rails'
