@@ -1,17 +1,4 @@
 %h1 Welcome to Shorten Me!
 %hr
 
-.container
-  .jumbotron
-    .col-md-12
-      = simple_form_for @link, html: {class: "form-horizontal"}, wrapper: :inline_form, remote: true do |f|
-
-        - if @link.errors.present?
-          .alert.alert-danger{role: "alert"}
-            %span.sr-only Error:
-          = @link.errors.full_messages
-
-        .input-group
-          = f.input_field :destination, as: :string, label: false, class: "form-control", placeholder: "Enter URL"
-
-          = f.submit "Shorten", class: "btn btn-primary ml-2"
+= render "form", link: @link
